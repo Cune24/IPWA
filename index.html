@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" name="viewport" 
+  content="width=device-width, 
+  initial-scale=1.0"
+  maximum-scale="5.0" 
+  minimum-scale="0.5"
+  >  
+  <!-- cdn.jsdeliver needed for dompurify to be loaded -->
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+  <title>Alles Erklärt</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div id="root" class="root">
+    <Header>
+        <h1>AllesErklärt</h1>
+      </Header>
+      <div class="main-nav">
+        <button id="toggleDirectionBtn">Richtung wechseln</button>
+        <ul>
+          <li><a href="#section1">Toaster</a></li>
+          <li><a href="#section2">Roboter</a></li>
+          <li><a href="#section3">Handyakku</a></li>
+          <li><a href="#footer">Rechtliches</a></li>
+        </ul>
+      </div>
+    <div class="container" dir="direction">
+
+      <!-- Seitennavigation-->
+      <aside class="container-sidebar">
+          <h3>Sidebar</h3>
+          <ul>
+            <li><a href="#section1">Toaster</a></li>
+            <li><a href="#section2">Roboter</a></li>
+            <li><a href="#section3">Handyakku</a></li>
+            <li><a href="#footer">Rechtliches</a></li>
+
+          </ul>
+        </aside>
+
+      <!-- Inhaltsbereich -->
+      <div class="content">
+        <h1>Willkommen bei AllesErklärt</h1>
+        <p>Hier finden Sie alle Informationen zu diversen Anleitungen.</p>
+        <div class="section" id="input-text">
+          <label htmlFor="textInput">Text eingeben:</label>
+          <div contenteditable="true" id="textInput">...</div>  
+        </div>
+        <button id="addTextBtn">Text hinzufügen</button>
+        <div class="section" id="section1">
+          <h2>Smart-Toaster verbindet sich nicht mit dem WLAN</h2>
+          <p>
+            Der Nutzer soll "Reset" auf der Unterseite des Toasters für 5 Sekunden gedrückt halten.
+            Rufe bei der Toasterhotline an. Der Mitarbeiter wird sich um dein Problem kümmern und dir einen einmaligen Code zuschicken.
+            Frage einen Kollegen, der den Knopf für die Toasttemperatur drückt, während du den Code auf dem Smart-Gerät eingibst.
+            Der Fachmann am Telefon fügt deinen Toaster automatisch zur SmartKitchen App hinzu.
+            Jetzt sollte dein Smart-Toaster sich wieder einwandfrei mit deinem Wlan verbinden.
+          </p>
+        </div>
+        <div class="section" id="section2">
+          <h2>Roboter bleibt unter Möbeln stecken</h2>
+          <p>
+            Schalte den Staubsauger aus. 
+            Der Benutzer soll das Gerät vorsichtig herausheben. 
+            Nun soll der Nutzer einen Kollegen oder Mitarbeiter zur Hilfe holen, um jegliche Fremdkörper aus dem Gerät zu entfernen.
+            Rufe einen Wissenschaftler, der den Geheimcode für den Staubsauger auf dem Display antippt oder nutze den Notfallcode aus der Anleitung.
+            Starte die Selbstreinigungs- und reparationsssequenz.
+            Jetzt sollte dein Staubsauger wieder einwandfrei funktionieren.
+          </p>
+        </div>
+        <div class="section" id="section3">
+          <h2>Handyakku lädt nicht mehr ab 67%</h2>
+          <p>
+            Rufe einen Mitarbeiter der Handyfirma an, der den Energiesparmodus für dich remote aktiviert.
+            Melde den Benutzer vom Handy ab und entferne alle Stecker.
+            Leg dein Handy in die Gefriertruhe. Wenn du keine Gefriertruhe hast, frage Nachbarn oder Studenten bzw. Lehrer aus deiner Schule.
+            Lass dein Handy 67 Stunden im Gefrierfach.
+            Kauf dir ein originales Ladekabel von deinem Handyanbieter und melde den Nutzer wieder an.
+            Deaktiviere den Energiesparmodus des Handys.
+            Jetzt sollte dein Handy wieder einwandfrei aufladen.
+          </p>
+        </div>
+        <button id="genderBtn">Text analysieren</button>
+      </div>
+    </div>
+    <footer id="footer">
+        <p>@ 2026 AllesErklärt. Alle Rechte vorbehalten.</p>
+        <ul>
+          <li><a href="#impressum">Impressum</a></li>
+          <li><a href="#datenschutz">Datenschutz</a></li>
+          <li><a href="#Github">Github</a></li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+  
+  <!-- JavaScript-Scripts -->
+  <script src="textAnalyzer.js" type="module"></script>
+  <script src="textDirection.js" type="module"></script>
+</body>
+</html>
