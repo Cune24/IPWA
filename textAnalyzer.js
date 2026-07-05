@@ -15,6 +15,7 @@ const TO_REPLACE = {
   'Wissenschaftler': 'WissenschaftlerIn'
 };
 
+
 function sanitizeText(str, target) {
   const targetElement = document.getElementById(target); 
   if (!targetElement) return;
@@ -26,7 +27,7 @@ function sanitizeText(str, target) {
   });
   
   targetElement.innerHTML = cleanHTML;
-  console.log("Text wurde bereinigt");
+  console.log("Eingegebener Text wurde bereinigt");
 }
 
 // Schlüssel im Object werden nach Länge sortiert, da kürzere Begriffe in längeren mitinbegriffen sein können
