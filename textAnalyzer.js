@@ -66,33 +66,40 @@ function replaceGenderedTerms(elementId) {
   console.log('Text wurde gegendert');
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const btnInput = document.getElementById('addTextBtn');
-  const textInput = document.getElementById('textInput');
-  const btn = document.getElementById('genderBtn');
-  if (!btn || !textInput || !btnInput) {
-    return;
-  }
 
-  btn.addEventListener('click', () => {
-    const element = document.getElementById('root');
-    if (!element) {
-      console.warn('ID existiert nicht');
-      return;
-    }
+// der alte eventlistener mit vanilla js ist nun obsolet, da alpine.js den Ablauf vereinfacht
 
-    const inputContent = textInput.innerHTML;
-    sanitizeText(inputContent, 'textInput'); // automatically sanitizes anything in the textinput as well before gendering other terms proper
-    replaceGenderedTerms('root');
-    console.log('gender button gedrückt.')
+// document.addEventListener('DOMContentLoaded', () => {
+//   const btnInput = document.getElementById('addTextBtn');
+//   const textInput = document.getElementById('textInput');
+//   const btn = document.getElementById('genderBtn');
+//   if (!btn || !textInput || !btnInput) {
+//     return;
+//   }
 
-  });
+//   btn.addEventListener('click', () => {
+//     const element = document.getElementById('root');
+//     if (!element) {
+//       console.warn('ID existiert nicht');
+//       return;
+//     }
 
-  btnInput.addEventListener('click', () => {
+//     const inputContent = textInput.innerHTML;
+//     sanitizeText(inputContent, 'textInput'); // automatically sanitizes anything in the textinput as well before gendering other terms proper
+//     replaceGenderedTerms('root');
+//     console.log('gender button gedrückt.')
+
+//   });
+
+//   btnInput.addEventListener('click', () => {
     
-    const inputContent = textInput.innerHTML;
-    sanitizeText(inputContent,'textInput');   
-    replaceGenderedTerms('textInput');
-    console.log('hinzufügen button gedrückt.')
-  })
-});
+//     const inputContent = textInput.innerHTML;
+//     sanitizeText(inputContent,'textInput');   
+//     replaceGenderedTerms('textInput');
+//     console.log('hinzufügen button gedrückt.')
+//   })
+// });
+
+// Globaler Export für direkte Einbindung im .html
+window.replaceGenderedTerms = replaceGenderedTerms;
+window.sanitizeText = sanitizeText;

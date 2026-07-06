@@ -7,22 +7,25 @@
   maximum-scale="5.0" 
   minimum-scale="0.5"
   >  
-  <!-- cdn.jsdeliver needed for dompurify to be loaded -->
+  <!-- Alpine.js Framework import -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- DOMPurify import -->
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
   <link rel="icon" href="/favicon.png">
-
+   
   <title>Alles Erklärt</title>
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-  <div id="root" class="root">
+  <!-- ab hier kann die Richtungsänderung vorgenommen werden siehe x-data-->
+  <div id="root" class="root" x-data="{ direction: 'ltr'}" :dir="direction">
     <Header>
         <h1>AllesErklärt</h1>
       </Header>
       <div class="main-nav">
-        <button id="toggleDirectionBtn">Richtung wechseln</button>
+        <button id="toggleDirectionBtn" @click="direction = direction === 'ltr' ? 'rtl' : 'ltr'">Richtung wechseln</button>
         <ul>
           <li><a href="#section1">Toaster</a></li>
           <li><a href="#section2">Roboter</a></li>
@@ -30,7 +33,7 @@
           <li><a href="#footer">Rechtliches</a></li>
         </ul>
       </div>
-    <div class="container" dir="direction">
+    <div class="container">
 
       <!-- Seitennavigation-->
       <aside class="container-sidebar">
@@ -52,7 +55,9 @@
           <label htmlFor="textInput">Text eingeben:</label>
           <div contenteditable="true" id="textInput">...</div>  
         </div>
-        <button id="addTextBtn">Text hinzufügen</button>
+        <!-- mit alpine.js wird der Funktionsaufruf über den globalen export gestartet und benötigt keinen EventListener mehr-->
+        <button id="addTextBtn" @click="window.sanitizeText(textInput.innerHTML, 'textInput');
+        window.replaceGenderedTerms('root')">Text hinzufügen</button>
         <div class="section" id="section1">
           <h2>Smart-Toaster verbindet sich nicht mit dem WLAN</h2>
           <p>
@@ -86,7 +91,8 @@
             Jetzt sollte dein Handy wieder einwandfrei aufladen.
           </p>
         </div>
-        <button id="genderBtn">Text analysieren</button>
+        <button id="genderBtn" 
+        @click="window.replaceGenderedTerms('root')">Text analysieren</button>
       </div>
     </div>
     <footer id="footer">
@@ -99,9 +105,7 @@
       </footer>
     </div>
   </div>
-  
   <!-- JavaScript-Scripts -->
   <script src="textAnalyzer.js" type="module"></script>
-  <script src="textDirection.js" type="module"></script>
 </body>
 </html>

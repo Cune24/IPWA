@@ -1,3 +1,7 @@
+// Alter Code, wird durch Alpine.js ersetzt im .html und ist somit obsolet
+// würde in vanilla .js trotzdem noch funktionieren, ist allerdings nicht mehr im .html eingebunden
+// der sich ändernde Text muss erst noch neu übernommen/geschrieben werden im .html
+
 const toggleBtn = document.getElementById('toggleDirectionBtn');
 
 if (toggleBtn) {
