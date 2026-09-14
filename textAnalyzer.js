@@ -2,7 +2,7 @@ import DOMPurify from 'https://esm.sh/dompurify@3.0.6';
 
 // Regel-Objekt nach Gäckle (2021) Referenz
 const TO_REPLACE = {
-  'Mitarbeiter': 'Mitarbeitende',
+  'Mitarbeiter': 'Mitarbeitenden',
   'Student': 'Studierende',
   'Studenten': 'Studierende',
   'Leser': 'Lesende',
