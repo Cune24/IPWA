@@ -11,8 +11,6 @@ const TO_REPLACE = {
   'Kollegen': 'KollegInnen',
   'Lehrer': 'Lehrende',
   'Professor': 'ProfessorInnen',
-  'Der Fachmann' : 'Die Fachkraft',
-  'Ein Fachmann' : 'Die Fachkraft',
   'Wissenschaftler': 'WissenschaftlerInnen',
   'Fahrer': 'Fahrende',
   'Bürger': 'BürgerInnen',
